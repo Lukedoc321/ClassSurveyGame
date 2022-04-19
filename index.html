@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Class Survey</title>
+        <meta name="Class Survey Family Feud">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <main>
+
+        <header>
+
+            <div class="question">
+                <button type="button" class="button" id="fruit" onclick="fruit()">Delicious Fruit</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="vegetables" onclick="vegetables()">Delicious Vegetable</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="fast" onclick="fast()">Something Fast</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="slow" onclick="slow()">Something Slow</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="game" onclick="game()">Game Character</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="cartoon" onclick="cartoon()">Cartoon Character</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="expensive" onclick="expensive()">Expensive Store</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="cheap" onclick="cheap()">Cheap Store</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="bad" onclick="bad()">Bad Restaurant</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="want" onclick="want()">I want to be a...</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="cute" onclick="cute()">Something Cute</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="cool" onclick="cool()">Something Cool</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="red" onclick="red()">Something Red</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="purple" onclick="purple()">Something Purple</button>
+            </div>
+
+        </header>
+
+          <div id="game-board">
+
+            <div id="answer-box">
+
+                <div id="column1">
+                  <div id="answer-1" class="answer">
+                    <video height="200" id="video-1">
+                        <source id="source1" src="videos/fruit/apple.mp4">
+                    </video>
+                  </div>
+                  <div id="answer-2" class="answer">
+                    <video height="200" id="video-2">
+                        <source id="source2" src="videos/fruit/orange.mp4">
+                    </video>
+                  </div>
+                  <div id="answer-3" class="answer">
+                    <video height="200" id="video-3">
+                        <source id="source3" src="videos/fruit/grape.mp4">
+                    </video>
+                  </div>
+                  <div id="answer-4" class="answer">
+                    <video height="200" id="video-4">
+                        <source id="source4" src="videos/vegetables/onion.mp4">
+                    </video>
+                  </div>
+                </div>
+
+                <div id="column2">
+
+                  <div id="answer-5" class="answer">
+                    <video height="200" id="video-5">
+                        <source id="source5" src="videos/vegetables/corn.mp4">
+                    </video>
+                  </div>
+                  <div id="answer-6" class="answer">
+                    <video height="200" id="video-6">
+                        <source id="source6" src="videos/vegetables/watermelon.mp4">
+                    </video>
+                  </div>
+                  <div id="answer-7" class="answer">
+                    <video height="200" id="video-7">
+                        <source id="source7" src="videos/vegetables/broccoli.mp4">
+                    </video>
+                  </div>
+                  <div id="answer-8" class="answer">
+                    <video height="200" id="video-8">
+                        <source id="source8" src="videos/vegetables/cucumber.mp4">
+                    </video>
+                  </div>
+                </div>
+
+            </div>
+
+          </div>
+
+        </main>
+
+    <script>
+
+        // Page Setup Upon Loading
+
+        window.onload = function welcome() {
+            fruit();
+            alert("Welcome to the game!\n\n- Press the numbers on your keyboard (excluding keypad) to reveal the corresponding answers (and '0' for 10).\n- Press 'x' on your keyboard for a wrong answer animation.");
+            //document.getElementById("column2").style.display = "";
+        }
+
+        // Variables (Videos)
+
+        var video1 = document.getElementById('video-1');
+        var video2 = document.getElementById('video-2');
+        var video3 = document.getElementById('video-3');
+        var video4 = document.getElementById('video-4');
+        var video5 = document.getElementById('video-5');
+        var video6 = document.getElementById('video-6');
+        var video7 = document.getElementById('video-7');
+        var video8 = document.getElementById('video-8');
+
+
+        // "Fruit" Questions
+        function fruit() {
+            //alert("fruit");
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+            document.getElementById("fruit").classList.add("selected");
+            document.getElementById("video-1").src = "videos/fruit/apple.mp4";
+            document.getElementById("video-2").src = "videos/fruit/orange.mp4";
+            document.getElementById("video-3").src = "videos/fruit/grape.mp4";
+            document.getElementById("video-4").src = "videos/fruit/strawberry.mp4";
+            document.getElementById("video-5").src = "videos/fruit/mango.mp4";
+            document.getElementById("video-6").src = "videos/fruit/banana.mp4";
+
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        };
+
+        // "Vegetable" Questions
+        function vegetables() {
+            //alert("vegetables");
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+            document.getElementById("vegetables").classList.add("selected");
+            document.getElementById("video-1").src = "videos/vegetables/tomato.mp4";
+            document.getElementById("video-2").src = "videos/vegetables/potato.mp4";
+            document.getElementById("video-3").src = "videos/vegetables/carrot.mp4";
+            document.getElementById("video-4").src = "videos/vegetables/onion.mp4";
+            document.getElementById("video-5").src = "videos/vegetables/corn.mp4";
+            document.getElementById("video-6").src = "videos/vegetables/watermelon.mp4";
+            document.getElementById("video-7").src = "videos/vegetables/broccoli.mp4";
+            document.getElementById("video-8").src = "videos/vegetables/cucumber.mp4";
+
+            document.getElementById("answer-4").style.display = "";
+            document.getElementById("answer-5").style.display = "";
+            document.getElementById("answer-6").style.display = "";
+            document.getElementById("answer-7").style.display = "";
+            document.getElementById("answer-8").style.display = "";
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+
+            $(curtain).fadeOut(2500);
+        }
+
+        // "Something Fast" Questions
+       function fast() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("fast").classList.add("selected");
+            document.getElementById("video-1").src = "videos/fast/car.mp4";
+            document.getElementById("video-2").src = "videos/fast/cheetah.mp4";
+            document.getElementById("video-3").src = "videos/fast/plane.mp4";
+            document.getElementById("video-4").src = "videos/fast/train.mp4";
+            document.getElementById("video-5").src = "videos/fast/bullet.mp4";
+            document.getElementById("video-6").src = "videos/fast/usain.mp4";
+            document.getElementById("video-7").src = "videos/fast/time.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+            document.getElementById("answer-5").style.display = "inherit";
+            document.getElementById("answer-6").style.display = "inherit";
+            document.getElementById("answer-7").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Something Slow" Questions
+       function slow() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("slow").classList.add("selected");
+            document.getElementById("video-1").src = "videos/slow/turtle.mp4";
+            document.getElementById("video-2").src = "videos/slow/sloth.mp4";
+            document.getElementById("video-3").src = "videos/slow/snail.mp4";
+            document.getElementById("video-4").src = "videos/slow/ship.mp4";
+            document.getElementById("video-5").src = "videos/slow/ant.mp4";
+            document.getElementById("video-6").src = "videos/slow/me.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+            document.getElementById("answer-5").style.display = "inherit";
+            document.getElementById("answer-6").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Favorite Game Character" Questions
+       function game() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("game").classList.add("selected");
+            document.getElementById("video-1").src = "videos/game/mario.mp4";
+            document.getElementById("video-2").src = "videos/game/kirby.mp4";
+            document.getElementById("video-3").src = "videos/game/pikachu.mp4";
+            document.getElementById("video-4").src = "videos/game/steve.mp4";
+            document.getElementById("video-5").src = "videos/game/link.mp4";
+            document.getElementById("video-6").src = "videos/game/peach.mp4";
+            document.getElementById("video-7").src = "videos/game/slime.mp4";
+            document.getElementById("video-8").src = "videos/game/toad.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+            document.getElementById("answer-5").style.display = "inherit";
+            document.getElementById("answer-6").style.display = "inherit";
+            document.getElementById("answer-7").style.display = "inherit";
+            document.getElementById("answer-8").style.display = "inherit";
+
+        }
+
+        // "Favorite Cartoon Character" Questions
+       function cartoon() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("cartoon").classList.add("selected");
+            document.getElementById("video-1").src = "videos/cartoon/doraemon.mp4";
+            document.getElementById("video-2").src = "videos/cartoon/conan.mp4";
+            document.getElementById("video-3").src = "videos/cartoon/spongebob.mp4";
+            document.getElementById("video-4").src = "videos/cartoon/pikachu.mp4";
+            document.getElementById("video-5").src = "videos/cartoon/tom.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+            document.getElementById("answer-5").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-6").style.display = "none";
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Expensive Store" Questions
+       function expensive() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("expensive").classList.add("selected");
+            document.getElementById("video-1").src = "videos/expensive/gucci.mp4";
+            document.getElementById("video-2").src = "videos/expensive/chanel.mp4";
+            document.getElementById("video-3").src = "videos/expensive/louis.mp4";
+            document.getElementById("video-4").src = "videos/expensive/dior.mp4";
+            document.getElementById("video-5").src = "videos/expensive/jojoen.mp4";
+            document.getElementById("video-6").src = "videos/expensive/shabushabu.mp4";
+            document.getElementById("video-7").src = "videos/expensive/ferrari.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+            document.getElementById("answer-5").style.display = "inherit";
+            document.getElementById("answer-6").style.display = "inherit";
+            document.getElementById("answer-7").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Cheap Store" Questions
+       function cheap() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("cheap").classList.add("selected");
+            document.getElementById("video-1").src = "videos/cheap/daiso.mp4";
+            document.getElementById("video-2").src = "videos/cheap/family.mp4";
+            document.getElementById("video-3").src = "videos/cheap/711.mp4";
+            document.getElementById("video-4").src = "videos/cheap/don.mp4";
+            document.getElementById("video-5").src = "videos/cheap/ok.mp4";
+            document.getElementById("video-6").src = "videos/cheap/lawson.mp4";
+            document.getElementById("video-7").src = "videos/cheap/cando.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+            document.getElementById("answer-5").style.display = "inherit";
+            document.getElementById("answer-6").style.display = "inherit";
+            document.getElementById("answer-7").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Bad Restaurant" Questions
+       function bad() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("bad").classList.add("selected");
+            document.getElementById("video-1").src = "videos/bad/gusto.mp4";
+            document.getElementById("video-2").src = "videos/bad/sushiro.mp4";
+            document.getElementById("video-3").src = "videos/bad/royal.mp4";
+            document.getElementById("video-4").src = "videos/bad/mcdonalds.mp4";
+            document.getElementById("video-5").src = "videos/bad/kappazushi.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+            document.getElementById("answer-5").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-6").style.display = "none";
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "I want to be a..." Questions
+       function want() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("want").classList.add("selected");
+            document.getElementById("video-1").src = "videos/want/doctor.mp4";
+            document.getElementById("video-2").src = "videos/want/teacher.mp4";
+            document.getElementById("video-3").src = "videos/want/singer.mp4";
+            document.getElementById("video-4").src = "videos/want/pharmacist.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-5").style.display = "none";
+            document.getElementById("answer-6").style.display = "none";
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Something Cute" Questions
+       function cute() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("cute").classList.add("selected");
+            document.getElementById("video-1").src = "videos/cute/cat.mp4";
+            document.getElementById("video-2").src = "videos/cute/dog.mp4";
+            document.getElementById("video-3").src = "videos/cute/rabbit.mp4";
+            document.getElementById("video-4").src = "videos/cute/kudo.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-5").style.display = "none";
+            document.getElementById("answer-6").style.display = "none";
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Something Cool" Questions
+       function cool() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("cool").classList.add("selected");
+            document.getElementById("video-1").src = "videos/cool/luke.mp4";
+            document.getElementById("video-2").src = "videos/cool/lion.mp4";
+            document.getElementById("video-3").src = "videos/cool/wolf.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-4").style.display = "none";
+            document.getElementById("answer-5").style.display = "none";
+            document.getElementById("answer-6").style.display = "none";
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Something Red" Questions
+       function red() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("red").classList.add("selected");
+            document.getElementById("video-1").src = "videos/red/apple.mp4";
+            document.getElementById("video-2").src = "videos/red/tomato.mp4";
+            document.getElementById("video-3").src = "videos/red/blood.mp4";
+            document.getElementById("video-4").src = "videos/red/strawberry.mp4";
+            document.getElementById("video-5").src = "videos/red/post.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+            document.getElementById("answer-5").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-6").style.display = "none";
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // "Something Purple" Questions
+       function purple() {
+
+           // Color the selected topic in header
+
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+
+           // Curtain transition animation
+
+            var curtain = document.createElement("IMG");
+            curtain.setAttribute("src", "images/curtain.jpg");
+            curtain.style.minWidth = "100%";
+            curtain.style.position = "absolute";
+            curtain.setAttribute("id", "strike");
+            document.getElementById("game-board").appendChild(curtain);
+            curtain.style.display = "none";
+            //$('#column1').fadeOut(500);
+            $(curtain).fadeIn(0);
+            //$('#column1').fadeIn(500);
+            $(curtain).fadeOut(2500);
+
+           // Change out video files
+            document.getElementById("purple").classList.add("selected");
+            document.getElementById("video-1").src = "videos/purple/grapes.mp4";
+            document.getElementById("video-2").src = "videos/purple/eggplant.mp4";
+            document.getElementById("video-3").src = "videos/purple/berry.mp4";
+            document.getElementById("video-4").src = "videos/purple/wario.mp4";
+
+           // Make new videos visible
+
+            document.getElementById("answer-1").style.display = "inherit";
+            document.getElementById("answer-2").style.display = "inherit";
+            document.getElementById("answer-3").style.display = "inherit";
+            document.getElementById("answer-4").style.display = "inherit";
+
+           // Make old videos invisible
+
+            document.getElementById("answer-5").style.display = "none";
+            document.getElementById("answer-6").style.display = "none";
+            document.getElementById("answer-7").style.display = "none";
+            document.getElementById("answer-8").style.display = "none";
+
+        }
+
+        // Keypress Events
+        document.onkeydown = function(e){
+            if((e || KeyboardEvent).keyCode === 49){
+                video1.paused ? video1.play() : video1.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 50){
+                video2.paused ? video2.play() : video2.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 51){
+                video3.paused ? video3.play() : video3.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 52){
+                video4.paused ? video4.play() : video4.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 53){
+                video5.paused ? video5.play() : video5.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 54){
+                video6.paused ? video6.play() : video6.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 55){
+                video7.paused ? video7.play() : video7.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 56){
+                video8.paused ? video8.play() : video8.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 88){
+                var audio = new Audio("sounds/strike.mp3");
+                audio.play();;
+
+                audio.onplaying = function() {
+                    var strike = document.createElement("IMG");
+                    strike.setAttribute("src", "images/strike.png");
+                    strike.setAttribute("id", "strike");
+                    document.getElementById("game-board").appendChild(strike);
+                    strike.style.display = "none";
+                    $(strike).fadeIn(500);
+                    //$('#' + strike).fadeIn(1000);
+                    strike.style.position = "absolute";
+                    strike.style.top = "15%";
+                    //alert("strike");
+                }
+                audio.onended = function() {
+                    $(strike).fadeOut(500);
+                    //strike.remove();
+                };
+            }
+        };
+
+        // Auto-pause videos at end
+
+        video1.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+        video2.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+        video3.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+        video4.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+        video5.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+        video6.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+        video7.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+        video8.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+
+    </script>
+
+
+    </body>
+
+</html>

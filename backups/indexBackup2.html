@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Class Survey</title>
+        <meta name="Class Survey Family Feud">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    
+    <body>
+        
+        <main>
+            
+        <header>
+        
+            <div class="question">
+                <button type="button" class="button" id="fruit" onclick="fruit()">Delicious Fruit</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button" id="vegetables" onclick="vegetables()">Delicious Vegetable</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Something Fast</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Something Slow</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Game Character</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Cartoon Character</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Expensive Store</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Cheap Store</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Bad Restaurant</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">I want to be a...</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Something Cute</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Something Cool</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Something Red</button>
+            </div>
+            <div class="question">
+                <button type="button" class="button">Something Purple</button>
+            </div>
+            
+        </header>
+        
+          <div id="game-board">
+            <!-- <h1>Hello</h1> -->
+            <div id="answer-box">
+              <div id="answer-1" class="answer">
+                <video height="250" id="video-1">
+                    <source id="source1" src="videos/fruit/apple.mp4">
+                </video>
+              </div>
+              <div id="answer-2" class="answer">
+                <video height="250" id="video-2">
+                    <source id="source2" src="videos/fruit/orange.mp4">
+                </video>
+              </div>
+              <div id="answer-3" class="answer">
+                <video height="250" id="video-3">
+                    <source id="source3" src="videos/fruit/grape.mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+            
+        </main>
+        
+    <script>
+        
+        window.onload = function welcome() {
+            fruit();
+            alert("Welcome to the game!\n\n- Press the numbers on your keyboard to reveal the corresponding answers (and '0' for 10).\n- Press 'x' on your keyboard for a wrong answer animation.");
+        }
+        
+        var video1 = document.getElementById('video-1');
+        var video2 = document.getElementById('video-2');
+        var video3 = document.getElementById('video-3');   
+        
+        function vegetables() {
+            //alert("vegetables");
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+            document.getElementById("vegetables").classList.add("selected");
+            document.getElementById("video-1").src = "videos/vegetables/tomato.mp4";
+            document.getElementById("video-2").src = "videos/vegetables/potato.mp4";
+            document.getElementById("video-3").src = "videos/vegetables/carrot.mp4";
+        }
+
+        function fruit() {
+            //alert("fruit");
+            var elements = document.getElementsByClassName("button");
+            for(var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("selected");
+            }
+            document.getElementById("fruit").classList.add("selected");
+            document.getElementById("video-1").src = "videos/fruit/apple.mp4";
+            document.getElementById("video-2").src = "videos/fruit/orange.mp4";
+            document.getElementById("video-3").src = "videos/fruit/grape.mp4";
+        };
+        document.onkeydown = function(e){
+            if((e || KeyboardEvent).keyCode === 49){
+                video1.paused ? video1.play() : video1.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 50){
+                video2.paused ? video2.play() : video2.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 51){
+                video3.paused ? video3.play() : video3.pause();
+                var audio = new Audio("sounds/correct.mp3");
+                audio.play();;
+            }
+            if((e || KeyboardEvent).keyCode === 88){
+                var audio = new Audio("sounds/strike.mp3");
+                audio.play();;
+
+                audio.onplaying = function() {
+                    var strike = document.createElement("IMG");
+                    strike.setAttribute("src", "images/strike.png");
+                    strike.setAttribute("id", "strike");
+                    document.getElementById("game-board").appendChild(strike);
+                    strike.style.position = "absolute";
+                    strike.style.top = "30%";
+                }
+                audio.onended = function() {
+                     strike.remove();
+                };
+            }
+        };
+        
+   /*        
+        document.onkeydown = function(f){
+            if((f || KeyboardEvent).keyCode === 50){
+                video2.paused ? video2.play() : video2.pause();
+            }
+        };
+ 
+        document.onkeydown = function(g){
+            if((g || KeyboardEvent).keyCode === 51){
+                video3.paused ? video3.play() : video3.pause();
+            }
+        };
+    */
+
+        video1.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+
+        video2.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+        
+        video3.addEventListener("timeupdate", function(){
+            if(this.currentTime >= 1.9) {
+                this.pause();
+            }
+        });
+
+    </script>
+        
+        
+    </body>
+    
+</html>
