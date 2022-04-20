@@ -82,6 +82,24 @@
     position: ;
 }
 
+.round {
+    color: #FFFFFF;
+    background-color: orange;
+    border-radius: 3em;
+    height: auto;
+    position: absolute;
+    height: auto;
+    margin-top: 18%;
+    padding: 3%;
+    border: .05em solid white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 7em;
+}
+
 body {
     background-color: black;
 }
