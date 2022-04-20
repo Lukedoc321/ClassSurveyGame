@@ -157,10 +157,12 @@
             curtain.setAttribute("id", "strike");
             document.getElementById("game-board").appendChild(curtain);
             curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
+
             document.getElementById("fruit").classList.add("selected");
             document.getElementById("video-1").src = "videos/fruit/apple.mp4";
             document.getElementById("video-2").src = "videos/fruit/orange.mp4";
@@ -168,9 +170,17 @@
             document.getElementById("video-4").src = "videos/fruit/strawberry.mp4";
             document.getElementById("video-5").src = "videos/fruit/mango.mp4";
             document.getElementById("video-6").src = "videos/fruit/banana.mp4";
+            document.getElementById("video-7").src = "videos/fruit/pineapple.mp4";
+            document.getElementById("video-8").src = "videos/fruit/watermelon.mp4";
 
-            document.getElementById("answer-7").style.display = "none";
-            document.getElementById("answer-8").style.display = "none";
+            document.getElementById("answer-1").style.display = "";
+            document.getElementById("answer-2").style.display = "";
+            document.getElementById("answer-3").style.display = "";
+            document.getElementById("answer-4").style.display = "";
+            document.getElementById("answer-5").style.display = "";
+            document.getElementById("answer-6").style.display = "";
+            document.getElementById("answer-7").style.display = "";
+            document.getElementById("answer-8").style.display = "";
 
         };
 
@@ -207,9 +217,11 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
+            
         }
 
         // "Something Fast" Questions
@@ -233,8 +245,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("fast").classList.add("selected");
@@ -258,7 +272,7 @@
 
            // Make old videos invisible
 
-            document.getElementById("answer-7").style.display = "none";
+
             document.getElementById("answer-8").style.display = "none";
 
         }
@@ -284,8 +298,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("slow").classList.add("selected");
@@ -333,8 +349,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("game").classList.add("selected");
@@ -381,8 +399,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("cartoon").classList.add("selected");
@@ -429,8 +449,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("expensive").classList.add("selected");
@@ -479,8 +501,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("cheap").classList.add("selected");
@@ -529,9 +553,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
-
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
            // Change out video files
             document.getElementById("bad").classList.add("selected");
             document.getElementById("video-1").src = "videos/bad/gusto.mp4";
@@ -577,8 +602,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("want").classList.add("selected");
@@ -624,9 +651,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
-
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
            // Change out video files
             document.getElementById("cute").classList.add("selected");
             document.getElementById("video-1").src = "videos/cute/cat.mp4";
@@ -671,9 +699,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
-
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
            // Change out video files
             document.getElementById("cool").classList.add("selected");
             document.getElementById("video-1").src = "videos/cool/luke.mp4";
@@ -717,8 +746,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("red").classList.add("selected");
@@ -765,8 +796,10 @@
             curtain.style.display = "none";
             //$('#column1').fadeOut(500);
             $(curtain).fadeIn(0);
-            //$('#column1').fadeIn(500);
-            $(curtain).fadeOut(2500);
+            //Delay by .5 seconds
+            setTimeout(function(){
+                $(curtain).fadeOut(2500);
+            }, 500);
 
            // Change out video files
             document.getElementById("purple").classList.add("selected");
