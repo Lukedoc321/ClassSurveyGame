@@ -1,12 +1,16 @@
 <!DOCTYPE html>
+
 <html>
+    
     <head>
+        
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Class Survey</title>
         <meta name="Class Survey Family Feud">
         <link rel="stylesheet" href="main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+         <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 
     </head>
 
@@ -151,17 +155,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Delicious Fruit";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
             document.getElementById("fruit").classList.add("selected");
             document.getElementById("video-1").src = "videos/fruit/apple.mp4";
@@ -209,18 +222,26 @@
             document.getElementById("answer-8").style.display = "";
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Delicious Vegetable";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
             
         }
 
@@ -237,20 +258,29 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Something Fast";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
+           
             document.getElementById("fast").classList.add("selected");
             document.getElementById("video-1").src = "videos/fast/car.mp4";
             document.getElementById("video-2").src = "videos/fast/cheetah.mp4";
@@ -290,18 +320,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Something Slow";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
             document.getElementById("slow").classList.add("selected");
@@ -341,18 +379,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Favorite Game Character";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
             document.getElementById("game").classList.add("selected");
@@ -391,18 +437,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Favorite Cartoon Character";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
             document.getElementById("cartoon").classList.add("selected");
@@ -441,18 +495,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Expensive Store";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
             document.getElementById("expensive").classList.add("selected");
@@ -493,18 +555,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Cheap Store";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
             document.getElementById("cheap").classList.add("selected");
@@ -545,18 +615,27 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Bad Restaurant";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
+
            // Change out video files
             document.getElementById("bad").classList.add("selected");
             document.getElementById("video-1").src = "videos/bad/gusto.mp4";
@@ -594,18 +673,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "I want to be a...";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
             document.getElementById("want").classList.add("selected");
@@ -643,18 +730,27 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Something Cute";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
+
            // Change out video files
             document.getElementById("cute").classList.add("selected");
             document.getElementById("video-1").src = "videos/cute/cat.mp4";
@@ -691,18 +787,28 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Something Cool";
+            round.setAttribute("class", "round");
+            round.style.marginTop = "12%";
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
+
            // Change out video files
             document.getElementById("cool").classList.add("selected");
             document.getElementById("video-1").src = "videos/cool/luke.mp4";
@@ -738,18 +844,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Something Red";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
             document.getElementById("red").classList.add("selected");
@@ -788,18 +902,26 @@
            // Curtain transition animation
 
             var curtain = document.createElement("IMG");
+            var round = document.createElement("h1");
+
             curtain.setAttribute("src", "images/curtain.jpg");
             curtain.style.minWidth = "100%";
             curtain.style.position = "absolute";
             curtain.setAttribute("id", "strike");
+            round.textContent = "Something Purple";
+            round.setAttribute("class", "round");
+            
             document.getElementById("game-board").appendChild(curtain);
-            curtain.style.display = "none";
-            //$('#column1').fadeOut(500);
+            document.getElementById("game-board").appendChild(round);
+            
             $(curtain).fadeIn(0);
-            //Delay by .5 seconds
+            $(round).fadeIn(0);
             setTimeout(function(){
-                $(curtain).fadeOut(2500);
-            }, 500);
+                $(round).fadeOut(2000);
+                setTimeout(function(){
+                    $(curtain).fadeOut(1500);
+                }, 2000);
+            }, 2000);
 
            // Change out video files
             document.getElementById("purple").classList.add("selected");
